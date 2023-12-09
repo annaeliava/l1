@@ -25,14 +25,14 @@ export function wordEndings(n, forms) {
     // последняя цифра
     let lastDigit = Number(n.toString().slice(-1));
 
-    if(lastDigit === lastDigits) {
-        console.log(`${n} ${forms[0]}`);
+    if(lastDigit === 1) {
+        console.log(`${n} ${forms[0]}`); // им п в ед ч
         return;
-    } else if(lastDigits < 20) {
-        console.log(`${n} ${forms[2]}`);
+    } else if(lastDigits < 21 && lastDigits > 4) {
+        console.log(`${n} ${forms[2]}`); // р п во мн ч
         return;
     } else {
-        console.log(`${n} ${forms[1]}`);
+        console.log(`${n} ${forms[1]}`); // р п в ед ч
         return;
     }
 }
