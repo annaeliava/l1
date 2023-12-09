@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="apiVK.css">
+    <title>API VK</title>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back">назад</a>
+    <h1 class="title">Реализовать виджет, отображающий список постов из любого паблика в VK </h1>
+    
+    <div id="container">
+        <h2 class="widget__title">
+            <span>Посты </span>
+            <span id="group"></span>
+        </h2>
+        <ul id="post"></ul>
+    </div>
+
+    <div id="loading">
+        <div class="circle"></div>
+    </div>
+    <script src="apiVK.js"></script>
+</body>
+</html>

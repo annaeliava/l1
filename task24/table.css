@@ -1,0 +1,155 @@
+#container {
+    display: none;
+    flex-direction: column;
+    border: 0.5px solid #3845ad;
+}
+
+.titles {
+    width: 100%;
+    height: 45px;
+    display: grid;
+    grid-template-columns: 35px 100px 120px repeat(3, 1fr) 4rem 3.125rem;
+    gap: 5px;
+    border-bottom: 0.5px solid #3845ad;
+    font-weight: 600;
+    color: #E03932;
+}
+
+.titles__column {
+    padding-top: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.titles__btn {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menu {
+    width: 230px;
+    height: 60px;
+    padding: 5px 10px;
+    margin: 20px;
+    position: absolute;
+    top: 10px;
+    left: -120px;
+    display: none;
+    list-style-type: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.menu__active {
+    display: block;
+}
+
+.menu__item {
+    font-weight: 400;
+    color: #3845ad;
+    cursor: pointer;
+}
+
+.menu__item:hover {
+    font-weight: 600;
+}
+
+.hr {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    border: 0.5px solid #3845ad;
+}
+
+.row {
+    width: 100%;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 35px 100px 120px repeat(3, 1fr) 4rem 3.125rem;
+    gap: 5px;
+}
+
+.row:not(:last-child) {
+    border-bottom: 0.5px solid #3845ad;
+}
+
+.column:not(:last-child),
+.titles__column:not(:last-child) {
+    border-right: 0.5px solid #3845ad;
+}
+
+#pagination {
+    margin-top: 10px;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagintaion__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+    color: #E03932;
+    cursor: pointer;
+}
+
+.pagintaion__btn:hover {
+    font-weight: 600;
+}
+
+#pagination-numbers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    cursor: default;
+}
+
+.pagination__number {
+    color: #f36b2b;
+}
+
+#column-id {
+    padding-top: 2px;
+    text-align: center;
+    font-weight: 600;
+    color: #E03932;
+}
+
+.column {
+    padding-top: 2px;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.current {
+    padding: 2px 4px;
+    width: 24.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3845ad;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+
+.hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

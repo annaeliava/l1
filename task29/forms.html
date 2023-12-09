@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="forms.css">
+    <title>Forms</title>
+</head>
+<body>
+    <a href="/" class="back">назад</a>
+    <h1 class="title">Задача: Взаимодействие с формами</h1>
+    <h3 class="subtitle">ответ в консоле -></h3>
+    <form name="form" id="form">
+        <label class="label">Фамилия:
+            <input 
+                type="text" 
+                class="input__text"
+                name="surname"
+                maxlength="20"
+                onchange="validateSurname(this)" 
+                required> 
+            <div class="error" id="error__surname"></div>
+        </label>
+        <label class="label">Имя:
+            <input 
+                type="text" 
+                class="input__text" 
+                name="name"
+                maxlength="20"
+                onchange="validateName(this)"
+                required>
+            <div class="error" id="error__name"></div>
+        </label>
+        <label class="label">Отчество:
+            <input 
+                type="text" 
+                class="input__text"
+                name="paternal"
+                maxlength="20"
+                onchange="validatePaternal(this)">
+            <div class="error" id="error__paternal"></div>
+        </label>
+        <label class="label">Дата рождения:
+            <input 
+                type="date" 
+                name="date" 
+                id="date"
+                class="input__date"
+                max="2013-01-01"
+                required>
+        </label>
+        <button class="btn" type="submit">Отправить</button>
+    </form>
+
+    <script src="forms.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+body {
+    padding: 5% 10%;
+    font-family: 'Crimson Text', serif;
+    background-color: #f4e1c3;
+}
+
+.title,
+.subtitle {
+    letter-spacing: 3px;
+    color: #f36b2b;
+}
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks__link {
+    margin-bottom: 5px;
+    height: 20px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: #f36b2b;
+    cursor: pointer;
+}
+
+.tasks__link:hover {
+    font-weight: 700;
+}
+
+.tasks__link:visited {
+    color: #3845ad;
+}
+
+.back {
+    height: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #3845ad;
+}
+
+.back:hover {
+    color: #f36b2b;
+}
+
+.back:active {
+    color: #3845ad;
+}
+
+#loading {
+    width: 100%;
+    margin-top: 100px;
+    display: none;
+    text-align: center;
+}
+
+.circle {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+.circle:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    } 
+    100% {
+        transform: rotate(360deg);
+    }
+}

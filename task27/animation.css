@@ -1,0 +1,46 @@
+.container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.instruction {
+    font-family: sans-serif;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+#ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid #3845ad;
+    position: relative;
+    left: 0;
+    cursor: pointer;
+}
+
+.animatedBall {
+    animation-name: change-position;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+#hr {
+    width: 100%;
+    border: 1px solid red;
+}
+
+@keyframes change-position{
+    0%{
+        left: 0;
+    } 
+    100% {
+        left: 80%;
+    }
+}
+
+#word {
+    cursor: pointer;
+}

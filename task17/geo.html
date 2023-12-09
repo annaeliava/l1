@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="geo.css">
+    <!-- скрипт Яндекс.Карта -->
+    <script src="https://api-maps.yandex.ru/v3/?apikey=264a026e-c088-4550-9f6b-514fa6ceec1b&lang=ru_RU" type="text/javascript"></script>
+    <title>Карта</title>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back">назад</a>
+    <div class="container">
+        <h1 class="title">Задача: Необходимо реализовать простое поле ввода адреса с функцией геокодинга</h1>
+        <div class="container__input">
+            <input type="text" id="geo-input">
+            <ul id="result-list"></ul>
+        </div>
+        
+        <div id="map" class="map"></div>
+    </div>
+    
+    <script src="geo.js"></script>
+</body>
+</html>

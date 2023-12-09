@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="table.css">
+    <title>Таблица</title>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back">назад</a>
+    <h1 class="title">Разработайте страницу, отображающую таблицу с данными</h1>
+    <div id="container">
+        <div class="titles">
+            <div class="titles__column"></div>
+            <div class="titles__column" id="name">
+                <span>Имя</span>
+                <button class="titles__btn" id="btn-1" onclick="showMenu(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
+                        <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                    </svg>
+                </button>
+                <ul id="menu-1" class="menu">
+                    <li class="menu__item" id="lowToHigh" onclick="sort(this)">сортировать по возрастанию</li>
+                    <div class="hr"></div>
+                    <li class="menu__item" id="highToLow" onclick="sort(this)">сортировать по убыванию</li>
+                </ul>
+            </div>
+            <div class="titles__column" id="last-name">
+                <span>Фамилия</span>
+                <button class="titles__btn" id="btn-2" onclick="showMenu(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
+                        <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                    </svg>
+                </button>
+                <ul id="menu-2" class="menu">
+                    <li class="menu__item" id="lowToHigh" onclick="sort(this)">сортировать по возрастанию</li>
+                    <div class="hr"></div>
+                    <li class="menu__item" id="highToLow" onclick="sort(this)">сортировать по убыванию</li>
+                </ul>
+            </div>
+            <div class="titles__column" id="tel">
+                <span>Номер телефона</span>
+                <button class="titles__btn" id="btn-3" onclick="showMenu(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
+                        <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                    </svg>
+                </button>
+                <ul id="menu-3" class="menu">
+                    <li class="menu__item" id="lowToHigh" onclick="sort(this)">сортировать по возрастанию</li>
+                    <div class="hr"></div>
+                    <li class="menu__item" id="highToLow" onclick="sort(this)">сортировать по убыванию</li>
+                </ul>
+            </div>
+            <div class="titles__column" id="address">
+                <span>Адрес</span>
+                <button class="titles__btn" id="btn-4" onclick="showMenu(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
+                        <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                    </svg>
+                </button>
+                <ul id="menu-4" class="menu">
+                    <li class="menu__item" id="lowToHigh" onclick="sort(this)">сортировать по возрастанию</li>
+                    <div class="hr"></div>
+                    <li class="menu__item" id="highToLow"  onclick="sort(this)">сортировать по убыванию</li>
+                </ul>
+            </div>
+            <div class="titles__column" id="city">
+                <span>Город</span>
+                <button class="titles__btn" id="btn-5" onclick="showMenu(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
+                        <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                    </svg>
+                </button>
+                <ul id="menu-5" class="menu">
+                    <li class="menu__item" id="lowToHigh"  onclick="sort(this)">сортировать по возрастанию</li>
+                    <div class="hr"></div>
+                    <li class="menu__item" id="highToLow"  onclick="sort(this)">сортировать по убыванию</li>
+                </ul>
+            </div>
+            <div class="titles__column" id="state">
+                <span>Штат</span>
+                <button class="titles__btn" id="btn-6" onclick="showMenu(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
+                        <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                    </svg>
+                </button>
+                <ul id="menu-6" class="menu">
+                    <li class="menu__item" id="lowToHigh" onclick="sort(this)">сортировать по возрастанию</li>
+                    <div class="hr"></div>
+                    <li class="menu__item" id="highToLow" onclick="sort(this)">сортировать по убыванию</li>
+                </ul>
+            </div>
+            <div class="titles__column" id="zip">
+                <span>Zip</span>
+                <button class="titles__btn" id="btn-7" onclick="showMenu(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
+                        <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                    </svg>
+                </button>
+                <ul id="menu-7" class="menu">
+                    <li class="menu__item" id="lowToHigh" onclick="sort(this)">сортировать по возрастанию</li>
+                    <div class="hr"></div>
+                    <li class="menu__item" id="highToLow" onclick="sort(this)">сортировать по убыванию</li>
+                </ul>
+            </div>
+        </div>
+        <div id="table"></div>
+    </div>
+    <div id="pagination">
+        <button id="prev" class="pagintaion__btn"><</button>
+        <div id="pagination-numbers"></div>
+        <button id="next" class="pagintaion__btn">></button>
+    </div>
+
+    <div id="loading">
+        <div class="circle"></div>
+    </div>
+
+    <script src="table.js"></script>
+</body>
+</html>

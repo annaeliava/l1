@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <title>Рекурсивный обход дерева DOM</title>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back">назад</a>
+    <h1 class="title">Рекурсивный обход дерева DOM</h1>
+    <h3 class="subtitle">ответ в консоле -></h3>
+
+    <div>
+        <h2>Title</h2>
+        <ul id="menu"> 
+            <li>hot drinks
+                <ul>
+                    <li>coffee
+                        <ul>
+                            <li>espresso</li>
+                            <li>americano</li>
+                            <li>cappuccino</li>
+                            <li>flat white</li>
+                        </ul>
+                    </li>
+                    <li>tea
+                        <ul>
+                            <li>black tea</li>
+                            <li>green tea
+                                <ul>
+                                    <li>sencha</li>
+                                    <li>jasmine</li>
+                                    <li>matcha</li>
+                                </ul>
+                            </li>
+                            <li>mint tea</li>
+                            <li>oolong tea</li>
+                        </ul>
+                    </li>
+                    <li>hot chocolate</li>
+                </ul>
+            </li>
+            <li>cold drinks
+                <ul>
+                    <li>drinks with caffeine
+                        <ul>
+                            <li>iced cappuccino</li>
+                            <li>iced latte</li>
+                            <li>bumble coffee</li>
+                        </ul>
+                    </li>
+                    <li>iced tea</li>
+                    <li>iced matcha</li>
+                    <li>lemonades
+                        <ul>
+                            <li>classic lemonade</li>
+                            <li>strawberry lemonade</li>
+                            <li>lavender lemonade</li>
+                            <li>raspberry lemonade</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script src="tree.js"></script>
+</body>
+</html>
