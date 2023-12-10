@@ -73,7 +73,7 @@ const convertJsonToLinkedList = (json) => {
     
     const linkedList = new LinkedList();
 
-    if (!(Array.isArray(list) && list.length > 0)) return 'not an array was passed or the array is empty'
+    if (!(Array.isArray(list) && list.length > 0)) return 'array is empty or not passed'
 
     list.forEach(obj => linkedList.append(obj));
 
