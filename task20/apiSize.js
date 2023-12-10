@@ -18,8 +18,10 @@ const calculateLocalStorage = (str) => {
 };
 
 const getCurrent = () => {
-    calculateLocalStorage("Объем данных задачи 19: ");
+    console.log(calculateLocalStorage("Объем данных задачи 19: "));
 }
+
+getCurrent();
 
 const getMax = () => {
     if(confirm('Нажав ok, все данные в localStorage будут удалены. Чтобы предотвратить данное действие, нажмите на "Отмена"')) {
@@ -58,3 +60,5 @@ const getMax = () => {
         history.back();
     }
 }
+
+getMax();
