@@ -105,29 +105,53 @@ async function loadScript(offset, count) {
 
 function renderPost(data) {
     let posts = data;
+    console.log(posts)
     let content = '';
     widget.style.display = 'block';
     for(let post of posts){
+        // получаем массив с данными о прикрепленных картинках
         let imgArr = post.attachments.map((a) => {
             if(a.photo !== undefined && a.photo !== null){
                 return a.photo;
-            } return 0
+            } return;
         });
-        let img = imgArr.map((a) => {
-            return `<img class="img" id="${a.id}" src="${a.sizes.map((b) => {return b.url;})}">`;
+        // фильтруем массив
+        let filteredImgArr = imgArr.filter((a) => a !== undefined);
+        // шаблон для картинок 
+        let img = filteredImgArr.map((a) => {
+            return `<img class="img" id="${a.id}" src="${a?.sizes[6].url}">`; // [6] - выбираем качество картинки
         }).join(''); // массив в строку
+
+        // кол-во лайков
+        let likes = post.likes.count;
+
+        // кол-во репостов
+        let reposts = post.reposts.count;
+
+        // посты
         content += `<li class="post">
             <div class="post__text">${post.text}</div>
             ${
-                post.attachments && imgArr?
-                    `<div class="post__container__img">
+                post.attachments && filteredImgArr?
+                    `<div class="${filteredImgArr.length>1?'post__container__images':'post__container__img'}">
                         ${img}
                     </div>`
                 :
             ''
             }
+            <div class="post__interaction">
+                <div class="post__likes">
+                    <img class="post__likes__img" src="../assets/img/heart-svgrepo-com.svg">
+                    <span class="post__likes__num">${likes>0?likes:''}</span>
+                </div>
+                <div class="post__reposts">
+                    <img class="post__reposts__img" src="../assets/img/share-1-svgrepo-com.svg">
+                    <span class="post__reposts__num">${reposts>0?reposts:''}</span>
+                </div>
+            </div>
         </li>`;
     }
+    // добавляем в DOM
     container.innerHTML = content;
 }
 
@@ -143,12 +167,17 @@ window.addEventListener('DOMContentLoaded', async() => {
     }
 });
 
-// widget.addEventListener('scroll', async function() {
-//     const scrolledToBottom = container.scrollHeight - container.clientHeight <= container.scrollTop + 1
-//     if(scrolledToBottom) {
-//         let cachedData = loadFromLocalStorage();
-//         offset += cachedData.length;
-//         count += offset;
-//         await loadScript(offset, count);
-//     }
-// });
+widget.addEventListener('scroll', async function() {
+    const diff = Math.ceil(this.scrollHeight - (this.clientHeight + this.scrollTop));
+    if(diff<5) {
+        container.scrollIntoView();
+        container.style.display = 'none';
+        document.getElementById('loading-post').style.display = 'block';
+        offset += count;
+        await loadScript(offset, count);
+        setTimeout(() => {
+            document.getElementById('loading-post').style.display = 'none';
+            container.style.display = 'flex';
+        }, 5000);
+    }
+});
