@@ -80,7 +80,7 @@ const MathX = {
         let primeNum = [];
 
         for (let i = 2; i <= n; i++) {
-            if (this.isPrime(i)) primeNum.push(i);
+            this.isPrime(i) && primeNum.push(i);
         }
 
         return primeNum;

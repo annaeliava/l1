@@ -35,49 +35,66 @@ let example = [
     },
 ];
 
-// convert json to string
-
+// конвертировали json в строку
 const json = JSON.stringify(example);
+
+class LinkedListNode {
+    // передаем next по умолчанию null
+    constructor(value, next = null) {
+        // текущий элемент
+        this.value = value;
+        // следующий элемент
+        this.next = next;
+    }
+
+    // возвращаем текущий элемент строкой
+    toString() {
+        return `${this.value}`;
+    } 
+}
 
 class LinkedList {
     constructor() {
+        // первый элемент 
         this.head = null;
+        // последний элемент
         this.tail = null;
     }
 
-    append = (value) => {
-        const newNode = {
-            value: value,
-            next: null,
-        };
+    // добавляем в конец списка новый элемент
+    append(value) {
+        const newNode = new LinkedListNode(value);
 
+        // создаем первый элемент
         if (!this.head || !this.tail) {
+            // первый элемент становить и началом, и концом, так как он один
             this.head = newNode;
             this.tail = newNode;
-    
+            // возвращаем текущий список
             return this;
         }
 
+        // если в списке были уже другие элементы, добавляем следущий 
         this.tail.next = newNode;
-        
+        // подставляем последний 
         this.tail = newNode;
-    }
 
-    getList = () => {
-        return this.head;
+        return this;
     }
 }
 
 const convertJsonToLinkedList = (json) => {
+    // проверяем не пустой ли объект или массив
+    if (json.length == 0 || json.length === undefined) return 'empty';
+    // парсим json
     const list = JSON.parse(json);
-    
+    // создаем список
     const linkedList = new LinkedList();
-
-    if (!(Array.isArray(list) && list.length > 0)) return 'array is empty or not passed'
-
+    // передаем value и вызываем append
     list.forEach(obj => linkedList.append(obj));
-
-    return linkedList.getList();
+    // возвращаем список
+    return linkedList;
 }
 
 console.log(convertJsonToLinkedList(json));
+console.log(convertJsonToLinkedList({})); // empty
